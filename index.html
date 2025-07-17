@@ -29,7 +29,7 @@
       <li><a href="#shipbuilding">Shipbuilding</a></li>
     </ul>
   </nav>
-  <main class="sectors-container">
+  <main class="sectors-container" id="main-content">
     <section id="textile" class="sector-card" data-sector="textile">
       <div class="sector-icon"></div>
       <div class="sector-title">Textile & Apparel Manufacturing</div>
@@ -94,6 +94,47 @@
       <div id="sector-modal-caption"></div>
     </div>
   </div>
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="contact-modal" style="display:none;">
+    <div class="contact-modal-content">
+      <span id="contact-modal-close" class="contact-modal-close">×</span>
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <label for="contact-name">Name:</label>
+        <input type="text" id="contact-name" name="name" required>
+        <label for="contact-email">Email:</label>
+        <input type="email" id="contact-email" name="email" required>
+        <label for="contact-need">Your Need for Service:</label>
+        <textarea id="contact-need" name="need" rows="3" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3>About</h3>
+        <p>Connecting businesses with global opportunities in export, import, and manufacturing across diverse sectors. Your trusted partner for international trade and industry insights.</p>
+      </div>
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#" id="home-link">Home</a></li>
+          <li><a href="services.html" id="services-link">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#" id="contact-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact">
+        <h3>Contact Info</h3>
+        <p>Email: <a href="mailto:info@constructioninfra.com">info@constructioninfra.com</a></p>
+        <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Construction & Infrastructure | All rights reserved.
+    </div>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html> 

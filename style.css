@@ -5,6 +5,105 @@ body {
   min-height: 100vh;
 }
 
+/* Animated Background Gradient */
+body {
+  background: linear-gradient(-45deg, #e3f0ff, #f9e7ff, #e0ffe7, #fffbe7);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Fade-in and Slide-in Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideInLeft 1s ease forwards;
+}
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Navbar Animation */
+.navbar {
+  animation: fadeInUp 1s 0.1s both;
+}
+
+/* Sector Cards Animation */
+.sector-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.sector-card.animated {
+  opacity: 1;
+  transform: none;
+}
+.sector-card:hover {
+  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  z-index: 2;
+}
+
+/* Footer Animation */
+.footer {
+  opacity: 0;
+  animation: fadeInUp 1s 0.8s forwards;
+}
+
+/* Modal Animations */
+.sector-modal, .contact-modal, #service-modal {
+  transition: opacity 0.3s;
+}
+.sector-modal-content, .contact-modal-content, #service-modal-content {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.sector-modal.show .sector-modal-content,
+.contact-modal.show .contact-modal-content,
+#service-modal.show #service-modal-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Service Button Animations (services.html) */
+.service-btn {
+  transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  will-change: transform;
+}
+.service-btn:hover {
+  background: #007bff;
+  color: #fff;
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+/* Smooth transitions for links and interactive elements */
+a, button, input, textarea {
+  transition: color 0.2s, background 0.2s, border 0.2s, box-shadow 0.2s;
+}
+
 .navbar {
   background: #1a3557;
   position: sticky;
@@ -123,6 +222,7 @@ body {
   align-items: center;
   padding: 32px 24px 24px 24px;
   position: relative;
+  overflow: auto;
 }
 .sector-modal-close {
   position: absolute;
@@ -149,4 +249,235 @@ body {
   font-size: 1.1rem;
   text-align: center;
   font-weight: 500;
+} 
+
+.footer {
+  background: #1a3557;
+  color: #fff;
+  font-family: 'Inter', Arial, sans-serif;
+  padding: 38px 0 0 0;
+  margin-top: 48px;
+  box-shadow: 0 -2px 12px rgba(26,53,87,0.08);
+}
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 24px 16px;
+}
+.footer-section {
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 340px;
+  margin-bottom: 18px;
+}
+.footer-section h3 {
+  color: #f3f8ff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+.footer-section p, .footer-section ul, .footer-section li, .footer-section a {
+  color: #e0eafc;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-section li {
+  margin-bottom: 8px;
+}
+.footer-section a:hover, .footer-section a:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+.footer-bottom {
+  text-align: center;
+  color: #b6c6e3;
+  font-size: 0.98rem;
+  padding: 18px 0 12px 0;
+  border-top: 1px solid #2a4977;
+  margin-top: 12px;
+} 
+
+.services-container {
+  max-width: 1100px;
+  margin: 48px auto 0 auto;
+  padding: 0 16px 48px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.services-heading {
+  color: #1a3557;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.service-btn {
+  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+  color: #1a3557;
+  border: none;
+  border-radius: 18px;
+  padding: 32px 0;
+  font-size: 1.13rem;
+  font-weight: 600;
+  box-shadow: 0 4px 24px rgba(26,53,87,0.10);
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.18s, background 0.2s;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.01em;
+  animation: fadeInUp 0.7s cubic-bezier(.23,1.01,.32,1) both;
+}
+.service-btn:hover, .service-btn:focus {
+  background: #e0eafc;
+  box-shadow: 0 8px 32px rgba(26,53,87,0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+} 
+
+/* Contact Modal Styles */
+.contact-modal {
+  display: none;
+  position: fixed;
+  z-index: 1002;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.5);
+}
+.contact-modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+#contact-form label {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+#contact-form input, #contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+#contact-form button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#contact-form button:hover {
+  background: #0056b3;
+}
+
+/* Force modal overlays to cover viewport and center content */
+.sector-modal,
+#service-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  left: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  display: none;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(0,0,0,0.5);
+}
+.sector-modal.show,
+#service-modal.show {
+  display: flex !important;
+}
+
+/* Modal content: fit tightly around image and caption */
+.sector-modal-content,
+#service-modal-content {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(26,53,87,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 18px 18px 18px;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow: auto;
+  margin: 0;
+}
+
+/* Modal image: always contained */
+#sector-modal-img,
+#service-modal-img,
+.sector-modal-content img,
+#service-modal-content img {
+  max-width: 100%;
+  max-height: 60vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 } 

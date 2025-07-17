@@ -28,26 +28,93 @@ cards.forEach(card => {
     iconDiv.textContent = sectorData[sector].icon;
   }
   card.addEventListener('click', () => {
-    showModal(sector);
+    if (!sectorData[sector]) return;
+    modalImg.src = sectorData[sector].img;
+    modalCaption.textContent = sectorData[sector].caption;
+    showModal(modal);
   });
 });
 
-function showModal(sector) {
-  if (!sectorData[sector]) return;
-  modalImg.src = sectorData[sector].img;
-  modalCaption.textContent = sectorData[sector].caption;
-  modal.classList.add('open');
-}
-
+// Remove old showModal(sector) function
+// Update close handlers to use hideModal
 modalClose.addEventListener('click', () => {
-  modal.classList.remove('open');
+  hideModal(modal);
   modalImg.src = '';
   modalCaption.textContent = '';
 });
 modal.addEventListener('click', e => {
   if (e.target === modal) {
-    modal.classList.remove('open');
+    hideModal(modal);
     modalImg.src = '';
     modalCaption.textContent = '';
   }
-}); 
+});
+
+// Smooth scroll for Home link in footer
+const homeLink = document.getElementById('home-link');
+if (homeLink) {
+  homeLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Animate navbar
+  const navbar = document.querySelector('.navbar');
+  if (navbar) navbar.classList.add('fade-in');
+
+  // Animate sector cards
+  const sectorCards = document.querySelectorAll('.sector-card');
+  sectorCards.forEach((card, i) => {
+    setTimeout(() => {
+      card.classList.add('animated');
+    }, 120 + i * 80);
+  });
+
+  // Animate footer
+  const footer = document.querySelector('.footer');
+  if (footer) setTimeout(() => footer.classList.add('fade-in'), 700);
+});
+
+// Animate modals in/out
+function showModal(modal) {
+  if (modal) {
+    modal.style.display = 'block';
+    setTimeout(() => modal.classList.add('show'), 10);
+  }
+}
+function hideModal(modal) {
+  if (modal) {
+    modal.classList.remove('show');
+    setTimeout(() => { modal.style.display = 'none'; }, 300);
+  }
+}
+
+// Contact Modal Logic (updated to use animation)
+const contactLink = document.getElementById('contact-link');
+const contactModal = document.getElementById('contact-modal');
+const contactModalClose = document.getElementById('contact-modal-close');
+const contactForm = document.getElementById('contact-form');
+
+if (contactLink && contactModal && contactModalClose) {
+  contactLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    showModal(contactModal);
+  });
+  contactModalClose.addEventListener('click', function() {
+    hideModal(contactModal);
+  });
+  window.addEventListener('click', function(event) {
+    if (event.target === contactModal) {
+      hideModal(contactModal);
+    }
+  });
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      hideModal(contactModal);
+      alert('Thank you for contacting us!');
+    });
+  }
+} 
