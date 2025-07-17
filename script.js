@@ -1,18 +1,18 @@
 const sectorData = {
-  textile: { img: 'Images/textile.jpg', caption: 'Textile & Apparel Manufacturing', icon: '🧵' },
-  automobile: { img: 'Images/automobile.jpg', caption: 'Automobile Industry', icon: '🚗' },
-  electronics: { img: 'Images/electronics.jpg', caption: 'Electronics & Components', icon: '💻' },
-  pharma: { img: 'Images/pharma.jpg', caption: 'Pharmaceuticals', icon: '💊' },
-  food: { img: 'Images/food.jpg', caption: 'Food Processing', icon: '🍎' },
-  machinery: { img: 'Images/machinery.jpg', caption: 'Heavy Machinery & Equipment', icon: '⚙️' },
-  chemicals: { img: 'Images/chemicals.jpg', caption: 'Chemicals & Fertilizers', icon: '🧪' },
-  metals: { img: 'Images/metals.jpg', caption: 'Metals & Mining', icon: '⛏️' },
-  agriculture: { img: 'Images/agriculture.jpg', caption: 'Agricultural Products', icon: '🌾' },
-  furniture: { img: 'Images/furniture.jpg', caption: 'Furniture & Woodwork', icon: '🪑' },
-  plastics: { img: 'Images/plastics.jpg', caption: 'Plastics & Packaging', icon: '📦' },
-  oil: { img: 'Images/oil.jpg', caption: 'Oil & Gas Equipment', icon: '🛢️' },
-  renewable: { img: 'Images/renewable.jpg', caption: 'Renewable Energy Components', icon: '🔋' },
-  shipbuilding: { img: 'Images/marine.jpg', caption: 'Shipbuilding & Marine Equipment', icon: '🚢' }
+  textile: { img: 'images/textile.jpg', caption: 'Textile & Apparel Manufacturing', icon: '🧵' },
+  automobile: { img: 'images/automobile.jpg', caption: 'Automobile Industry', icon: '🚗' },
+  electronics: { img: 'images/electronics.jpg', caption: 'Electronics & Components', icon: '💻' },
+  pharma: { img: 'images/pharma.jpg', caption: 'Pharmaceuticals', icon: '💊' },
+  food: { img: 'images/food.jpg', caption: 'Food Processing', icon: '🍎' },
+  machinery: { img: 'images/machinery.jpg', caption: 'Heavy Machinery & Equipment', icon: '⚙️' },
+  chemicals: { img: 'images/chemicals.jpg', caption: 'Chemicals & Fertilizers', icon: '🧪' },
+  metals: { img: 'images/metals.jpg', caption: 'Metals & Mining', icon: '⛏️' },
+  agriculture: { img: 'images/agriculture.jpg', caption: 'Agricultural Products', icon: '🌾' },
+  furniture: { img: 'images/furniture.jpg', caption: 'Furniture & Woodwork', icon: '🪑' },
+  plastics: { img: 'images/plastics.jpg', caption: 'Plastics & Packaging', icon: '📦' },
+  oil: { img: 'images/oil.jpg', caption: 'Oil & Gas Equipment', icon: '🛢️' },
+  renewable: { img: 'images/renewable.jpg', caption: 'Renewable Energy Components', icon: '🔋' },
+  shipbuilding: { img: 'images/marine.jpg', caption: 'Shipbuilding & Marine Equipment', icon: '🚢' }
 };
 
 const cards = document.querySelectorAll('.sector-card');
