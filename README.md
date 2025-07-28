@@ -1,72 +1,65 @@
-# 🌍 Export-Import & Manufacturing Across Sectors
+Export-Import & Manufacturing Sector Showcase
+A responsive, login-first web application built as an internship project for WhiteCircle Group. This project demonstrates key web development concepts by creating a secure portal where users can explore various industry sectors after authentication.
 
-> ✅ **Project Task by: WhiteCircle Group**  
-> 🧑‍💻 **Developer:** Harisharan Mishra (Intern)
+📍 Live Demo
+View the live project here
 
-This is a fully responsive and interactive web interface built as part of an internship assignment for WhiteCircle Group. It visually highlights how export-import and manufacturing play vital roles across 14 major industry sectors. Each sector is presented using a clickable card that opens a detailed image modal to showcase real-world applications.
+✨ Key Features
+🔐 Secure Login-First Architecture: The entire site is protected. Unauthenticated users are automatically redirected to a dedicated login/signup page.
 
----
+👤 User Authentication & Session Management:
 
-## 🎯 Objective
+Sign Up: New users can create an account, with their credentials stored in the browser's localStorage.
 
-To create an intuitive UI that:
-- Represents 14 critical sectors through visually engaging buttons/cards
-- Displays sector-specific templates or images on interaction (click)
-- Is well-structured using HTML, CSS, and JavaScript
+Login: Registered users can log in. A successful login creates a session flag in sessionStorage.
 
----
+Logout: The session can be terminated via a "Logout" button, which clears the session flag and redirects the user to the login page.
 
-## 📚 What This Project Demonstrates
+🚀 Interactive Sector Showcase: The "Services" page features a dynamic grid of 14 industry sectors.
 
-- Clean HTML5 structure  
-- Responsive layout and styling with CSS3 (including Flexbox and transitions)  
-- Interactive behavior using vanilla JavaScript  
-- Modal-based image preview logic  
-- Usage of emojis, sector icons, and smooth animations  
-- Good understanding of UI/UX principles
+📋 Detailed Modals: Clicking a sector button opens an informative modal displaying sample import/export products, complete with cloud-hosted images and prices.
 
----
+📱 Fully Responsive UI: The layout is built with modern CSS (Flexbox and Grid), ensuring a seamless experience on desktops, tablets, and mobile devices.
 
-## 🏗️ Tech Stack
+🛠️ Tech Stack
+HTML5: For the structure and semantic content of the web pages.
 
-| Layer        | Tech Used        |
-|--------------|------------------|
-| Structure    | HTML5            |
-| Styling      | CSS3 + Google Fonts (Inter) |
-| Interactivity| JavaScript (ES6) |
-| Assets       | Icons + Unsplash Images |
-| Tools        | VS Code + Live Server |
+CSS3: For all styling, including a dynamic gradient background, responsive layouts, and modal animations.
 
----
+Vanilla JavaScript (ES6): For all client-side logic, including:
 
-## 🖼️ Industry Sectors Covered
+The authentication "gatekeeper" flow.
 
-1. Textile & Apparel Manufacturing  
-2. Automobile Industry  
-3. Electronics & Components  
-4. Pharmaceuticals  
-5. Food Processing  
-6. Heavy Machinery & Equipment  
-7. Chemicals & Fertilizers  
-8. Metals & Mining  
-9. Agricultural Products  
-10. Furniture & Woodwork  
-11. Plastics & Packaging  
-12. Oil & Gas Equipment  
-13. Renewable Energy Components  
-14. Shipbuilding & Marine Equipment  
+DOM manipulation for the interactive modals.
 
----
+Handling user events and form submissions.
 
-## 📁 Folder Structure
+Managing localStorage (for user persistence) and sessionStorage (for session state).
 
-export-import-ui/
-├── index.html
-├── style.css
-├── script.js
-└── assets/
-└── images/
-├── textile.jpg
-├── automobile.jpg
-├── electronics.jpg
-└── ... (14 sector images)
+🚀 Getting Started
+To run this project locally, follow these steps:
+
+Clone the repository:
+
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+
+Navigate to the project directory:
+
+cd YOUR_REPOSITORY
+
+Open the application:
+Open the login.html file in your preferred web browser (e.g., Chrome, Firefox). This is the designated starting point for the application.
+
+🧠 Core Logic: The Login Gatekeeper
+The security of the site is managed by a simple yet effective "gatekeeper" function at the top of the script.js file.
+
+When any page loads, the script immediately checks for an isLoggedIn flag in the browser's sessionStorage.
+
+If the flag is not found and the user is trying to access any page other than login.html, the script redirects them to login.html.
+
+If the flag is found, the script allows the page content to become visible by removing a default display: none style from the <body>.
+
+This sessionStorage flag is only set upon a successful login and is cleared when the user logs out or closes the browser tab, ensuring that each session requires a fresh login.
+
+👤 Author
+Harisharan Mishra
