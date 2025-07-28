@@ -14,14 +14,6 @@ A responsive, login-first web application built as an internship project for **W
 
 ***
 
-## 📸 Project Demo
-
-*(A short GIF demonstrating the login process and the interactive service modals)*
-
-![Project Demo](./demo.gif)
-
-***
-
 ## ✨ Key Features
 
 * **🔐 Secure Login-First Architecture**: The entire site is protected. Unauthenticated users are automatically redirected to a dedicated login/signup page.
